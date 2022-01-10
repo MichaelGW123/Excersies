@@ -5,16 +5,13 @@
 import time
 start_time = time.time()
 
-test = "this is an awesome text"
-
-# First attempt
-test_split = test.split()
-
+# Second attempt
 longest = ''
-
-for item in test_split:
-    if len(item) > len(longest):
-        longest = item
+with open('C:\\Users\Michael JITN\\Documents\\Work\\Arete Interview\\Excersies\\Problem 1\\test.txt', 'r') as file:
+    for line in file:
+        for word in line.split():
+           if len(word) > len(longest):
+                longest = word
 
 print("Longest word is: ", longest)
 print("And its length is: ", len(longest))
