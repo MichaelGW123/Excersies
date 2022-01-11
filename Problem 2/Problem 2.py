@@ -12,7 +12,7 @@ start_time = time.time()
 
 # First attempt
 
-target = 'best'
+target = 'fry'
 count = 0
 with open('C:\\Users\Michael JITN\\Documents\\Work\\Arete Interview\\Excersies\\Problem 2\\test.txt', 'r') as file:
     for line in file:
