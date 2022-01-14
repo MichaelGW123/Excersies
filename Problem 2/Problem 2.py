@@ -30,7 +30,7 @@ def count_occurences(file, target, quote_dictionary):
         return 0
 
 
-with open('C:\\Users\Michael JITN\\Documents\\Work\\Arete Interview\\Excersies\\Problem 2\\test.txt', 'r') as file:
+with open(r'C:\Users\Michael JITN\Documents\Work\Arete Interview\Excersies\Problem 2\test.txt', 'r') as file:
     count = count_occurences(file, target, quote_dictionary)
 
 

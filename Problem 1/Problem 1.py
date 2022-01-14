@@ -15,12 +15,12 @@ def find_longest(file):
     return temp_longest
 
 
-with open('C:\\Users\Michael JITN\\Documents\\Work\\Arete Interview\\Excersies\\Problem 1\\test.txt', 'r') as file:
+with open(r'C:\Users\Michael JITN\Documents\Work\Arete Interview\Excersies\Problem 1\test.txt', 'r') as file:
     longest = find_longest(file)
 
 print("Longest word is: ", longest)
 print("And its length is: ", len(longest))
-print("--- %s seconds ---" % (time.time() - start_time))
+print(f"--- {time.time() - start_time}s seconds ---")
 
 # Potential Optimization - Sort
 # Merge sort based on length O(nlogn) + O(1). O(1) because accessing the last element.
