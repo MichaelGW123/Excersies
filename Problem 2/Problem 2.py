@@ -33,7 +33,6 @@ def count_occurences(file, target, quote_dictionary):
 with open(r'C:\Users\Michael JITN\Documents\Work\Arete Interview\Excersies\Problem 2\test.txt', 'r') as file:
     count = count_occurences(file, target, quote_dictionary)
 
-
 print("Target word is: ", target)
 print("And its occurences: ", count)
 print("--- %s seconds ---" % (time.time() - start_time))
