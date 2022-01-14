@@ -10,17 +10,33 @@ import time
 import string
 start_time = time.time()
 
-# First attempt
+# Second attempt
+target = 'best'
+quote_dictionary = {}
 
-target = 'fry'
-count = 0
+def count_occurences(file, target, quote_dictionary):
+    if len(quote_dictionary) == 0:
+        for line in file:
+            line_stripped = line.translate(str.maketrans('', '', string.punctuation))
+            for word in line_stripped.split():
+                if word not in quote_dictionary:
+                    quote_dictionary[word] = 1
+                else:
+                    quote_dictionary[word] += 1
+    
+    if target in quote_dictionary:
+        return quote_dictionary[target]
+    else:
+        return 0
+
+
 with open('C:\\Users\Michael JITN\\Documents\\Work\\Arete Interview\\Excersies\\Problem 2\\test.txt', 'r') as file:
-    for line in file:
-        line_stripped = line.translate(str.maketrans('', '', string.punctuation))
-        for word in line_stripped.split():
-           if word == (target):
-                count+=1
+    count = count_occurences(file, target, quote_dictionary)
+
 
 print("Target word is: ", target)
 print("And its occurences: ", count)
 print("--- %s seconds ---" % (time.time() - start_time))
+
+# Optimization - has to check every word. 
+# Dictionary, O(n) for first run, O(1) for all occurences after for the same input

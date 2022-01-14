@@ -11,19 +11,23 @@ start_time = time.time()
 
 # First attempt
 
+
 class Juice():
-    def __init__(self, name, capacity) -> None:
+    def __init__(self, name, capacity):
         self.name = name
         self.capacity = capacity
 
-    def addJuice(self, juice):
+    def __add__(self, juice):
+        if not isinstance(juice, Juice):
+            raise TypeError(f"Cannot add type of {type(object)} with {type(self)}")
         return(Juice(self.name+"&"+juice.name, self.capacity+juice.capacity))
+
 
 aj = Juice('apple', 2.5)
 oj = Juice('orange', 1.0)
 
-oaj = oj.addJuice(aj)
-oaoaj = oaj.addJuice(oaj)
+oaj = oj+aj
+oaoaj = oaj+oaj
 
 print("name: ", oaoaj.name)
 print("capacity: ",  oaoaj.capacity)
